@@ -1,0 +1,5 @@
+<!--pages/home/index.wxml-->
+<view>
+    主页
+    <text>pages/home/index.wxml</text>
+</view>
