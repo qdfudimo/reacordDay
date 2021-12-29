@@ -1,5 +1,16 @@
-<!--pages/home/index.wxml-->
-<view>
-    主页
-    <text>pages/home/index.wxml</text>
+<!-- pages/home/index.wxml -->
+<view class="main">
+    <view class="fixedTop">
+        <view class="tab" bindtap="switchTab">
+            <view class="tab_actvie-bar" style="transform:translateX({{movePx}})"></view>
+            <view class="tabItem {{activeTab == item.id ? 'active_tab':''}}" wx:for="{{tabData}}" data-name="{{item.id}}" wx:key="id">
+                {{item.name}}
+            </view>
+        </view>
+        <view class="serch">
+            <icon class="serch_icon" color="#000" type="search" size="20"></icon>
+            <input class="serch-input" value="{{inputValue}}" bindblur="focusInput" bindfocus="focusInput" placeholder-style="color:#999" placeholder="请输入搜索关键词" />
+            <icon class="close_icon" wx:if="{{showClose}}" type="cancel" size="20" color="#666"></icon>
+        </view>
+    </view>
 </view>

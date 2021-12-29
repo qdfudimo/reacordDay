@@ -5,9 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabData: [{
+      name: "我的",
+      id: "mine"
+    }, {
+      name: "空间",
+      id: "other"
+    }],
+    activeTab: "mine",
+    movePx: "0px",
+    inputValue: "",
+    showClose: false
   },
-
+  switchTab(e) {
+    let {
+      dataset,
+      offsetLeft,
+    } = e.target
+    this.setData({
+      activeTab: dataset.name,
+      movePx: `${offsetLeft - 3}px`
+    })
+  },
+  focusInput(e) {
+    this.setData({
+      showClose: e.type == "focus"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
