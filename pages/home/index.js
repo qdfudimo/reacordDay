@@ -15,7 +15,8 @@ Page({
     activeTab: "mine",
     movePx: "0px",
     inputValue: "",
-    showClose: false
+    showClose: false,
+    scheduleLsits:[]
   },
   switchTab(e) {
     let {
@@ -30,6 +31,11 @@ Page({
   focusInput(e) {
     this.setData({
       showClose: e.type == "focus"
+    })
+  },
+  clearInput() {
+    this.setData({
+      inputValue: ""
     })
   },
   /**
