@@ -13,20 +13,40 @@
             <icon class="close_icon" bindtap="clearInput" wx:if="{{showClose&&inputValue}}" type="cancel" size="20" color="#666"></icon>
         </view>
     </view>
-    <view class="schedule_view">
-        <view class="schedule_left">
-            <image class="user_img" src="/image/Occupying.png" />
-            <text class="user_time">2/14日</text>
+    <scroll-view
+      scroll-y style="width: 100%; height: calc( 100% - 48px );padding-bottom:48px;"
+      refresher-enabled="{{true}}"
+      refresher-threshold="{{100}}"
+      lower-threshold="{{30}}"
+      refresher-default-style="white"
+      refresher-background="lightgreen"
+      refresher-triggered="{{triggered}}"
+      bindrefresherrefresh="onRefresh"
+      bindscrolltolower="loadMore"
+      bindrefresherrestore="onRestore"
+    >
+        <view style="height: 20px;width:100%;">
         </view>
-        <view class="schedule_right">
-            <view class="schedule_header">
-                <text class="schedule_name">新年安排</text>
-                <view class="likeCount"><text class="iconfont icon-aixin-copy" style="color:#ccc;font-size:20px;margin-right:6px;"></text><text>6</text></view>
+        <block wx:for="{{arr}}" wx:key="index">
+            <view class="schedule_view">
+                <view class="schedule_left">
+                    <image class="user_img" src="/image/Occupying.png" />
+                    <text class="user_time">2/14日</text>
+                </view>
+                <view class="schedule_right">
+                    <view class="schedule_header">
+                        <text class="schedule_name">新年安排</text>
+                        <view class="likeCount"><text class="iconfont icon-aixin-copy" style="color:#ccc;font-size:20px;margin-right:6px;"></text><text>6</text></view>
+                    </view>
+                    <view class="schedule_list">新年开始了啊</view>
+                    <view class="schedule_list">新年开始了啊</view>
+                    <view class="schedule_list">新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货</view>
+                    <view class="schedule_footer">
+                        by : <image class="schedule_avatr" src="/image/avtar.png"  /><text >旺仔果冻</text>
+                    </view>
+                </view>
             </view>
-            <view class="schedule_list">新年开始了啊</view>
-            <view class="schedule_list">新年开始了啊</view>
-            <view class="schedule_list">新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货</view>
-        </view>
-    </view>
+        </block>
+    </scroll-view>
     <!-- <image wx:if="{{!scheduleLsits.length}}" class="empty" src="/image/empty.png" /> -->
 </view>
