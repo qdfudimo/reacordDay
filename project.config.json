@@ -47,7 +47,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.6",
+  "libVersion": "2.21.2",
   "appid": "wx5749ab991f62de93",
   "projectname": "recordDay",
   "debugOptions": {

@@ -2,6 +2,7 @@
   "pages": [
     "pages/home/index",
     "pages/mine/index",
+    "pages/create-record/create-record",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -13,8 +14,7 @@
   },
   "tabBar": {
     "custom": true,
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/index",
         "iconPath": "image/home.png",
         "selectedIconPath": "image/active_home.png",

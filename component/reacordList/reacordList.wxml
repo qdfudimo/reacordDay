@@ -1,0 +1,23 @@
+<view class="schedule_view">
+    <view class="schedule_left">
+        <image class="user_img" src="{{reacordList.scheduleImg||'/image/Occupying.png'}}" />
+        <text class="user_time">{{reacordList.scheduleTime}}</text>
+    </view>
+    <view class="schedule_right">
+        <view class="schedule_header">
+            <text class="schedule_name">{{reacordList.scheduleTheme}}</text>
+            <view class="likeCount">
+                <text bindtap="changeLike" class="iconfont icon-aixin-copy" style="color:{{reacordList.ifMyLike?'#eb3349':'#ccc'}};font-size:20px;margin-right:6px;"></text>
+                <text>{{reacordList.likeCount}}</text>
+            </view>
+        </view>
+        <block wx:for="{{reacordList.scheduleLists}}" wx:for-item="cell" wx:key="id">
+            <view class="schedule_list">{{cell.time ? cell.time + " : ":""}}{{cell.data}}</view>
+        </block>
+        <view class="schedule_footer">
+            by :
+            <image class="schedule_avatr" src="{{reacordList.userAvatrImage||'/image/avtar.png'}}" />
+            <text>{{reacordList.userName}}</text>
+        </view>
+    </view>
+</view>

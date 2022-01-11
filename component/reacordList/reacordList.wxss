@@ -1,0 +1,102 @@
+.schedule_view {
+    background-color: #fff;
+    width: calc(100% - 40px);
+    /* height: 140px; */
+    margin: 0 8px 12px 8px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* .schedule_view:first-child {
+    margin-top: 20px;
+} */
+.schedule_view:last-child {
+    margin-bottom: 26px;
+}
+
+.schedule_left {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user_img {
+    margin-top: 16px;
+    width: 80px;
+    height: 80px;
+    /* background-color: darkblue; */
+    border-radius: 12px;
+    box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(85, 85, 85, 0.10);
+}
+
+.user_time {
+    margin-top: 8px;
+    color: #666;
+}
+
+.schedule_right {
+    flex: 1;
+    padding-left: 8px;
+    /* background-color: cornflowerblue; */
+}
+
+.schedule_header {
+    overflow: hidden;
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+
+.schedule_name {
+    float: left;
+    color: #000;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* font-weight: bold;d81e06 */
+}
+
+.likeCount {
+    float: right;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.schedule_list {
+    position: relative;
+    font-size: 13px;
+    color: #666;
+    padding-left: 10px;
+}
+
+.schedule_list::before {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #60b007;
+    margin-right: 6px;
+}
+
+.schedule_footer {
+    font-size: 12px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #666;
+}
+
+.schedule_avatr {
+    margin: 0 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
