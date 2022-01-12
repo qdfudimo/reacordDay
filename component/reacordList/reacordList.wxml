@@ -1,23 +1,34 @@
 <view class="schedule_view">
-    <view class="schedule_left">
-        <image class="user_img" src="{{reacordList.scheduleImg||'/image/Occupying.png'}}" />
-        <text class="user_time">{{reacordList.scheduleTime}}</text>
-    </view>
-    <view class="schedule_right">
-        <view class="schedule_header">
-            <text class="schedule_name">{{reacordList.scheduleTheme}}</text>
-            <view class="likeCount">
-                <text bindtap="changeLike" class="iconfont icon-aixin-copy" style="color:{{reacordList.ifMyLike?'#eb3349':'#ccc'}};font-size:20px;margin-right:6px;"></text>
-                <text>{{reacordList.likeCount}}</text>
-            </view>
+    <view class="schedule_top">
+        <image class="schedule_avatr" src="{{reacordList.userAvatrImage||'/image/avtar.png'}}" />
+        <view class="issue_time">
+            <text class="userName">{{reacordList.userName}}</text>
+            <text>{{reacordList.scheduleTime}}</text>
         </view>
-        <block wx:for="{{reacordList.scheduleLists}}" wx:for-item="cell" wx:key="id">
-            <view class="schedule_list">{{cell.time ? cell.time + " : ":""}}{{cell.data}}</view>
-        </block>
-        <view class="schedule_footer">
-            by :
-            <image class="schedule_avatr" src="{{reacordList.userAvatrImage||'/image/avtar.png'}}" />
-            <text>{{reacordList.userName}}</text>
+    </view>
+    <view class="schedule_content">{{reacordList.scheduleContent}}</view>
+    <view class='pictures' wx:if='{{reacordList.scheduleImg && reacordList.scheduleImg.length}}'>
+        <!-- 大于等于两张图片 -->
+        <view data-index='{{index}}' data-urls='{{reacordList.scheduleImg}}' catchtap='preview' class='picture' style='height:228rpx;' wx:key='index' wx:for='{{reacordList.scheduleImg}}' wx:for-item='i'>
+            <image wx:key='index' mode='aspectFill' src='{{i}}' />
+        </view>
+        <!-- 一张图片 -->
+        <!-- <view data-index='{{0}}' data-urls='{{reacordList.scheduleImg}}' catchtap='preview' class='picture' style='width:80%;height:548rpx;' wx:if='{{reacordList.scheduleImg.length === 1}}'>
+            <image mode='widthFix' src="{{reacordList.scheduleImg[0]||'/image/Occupying.png'}}" />
+        </view> -->
+    </view>
+    <view class="schedule_bottom">
+        <view class="share">
+            <text class="iconfont icon-iconfontfenxiang" style="color:'#ccc';font-size:14px;margin-right:6px;"></text>
+            <text style="font-size:13px;">分享</text>
+        </view>
+        <view class="comment">
+            <text class="iconfont icon-comment" style="color:'#ccc';font-size:14px;margin-right:6px;"></text>
+            <text style="font-size:{{reacordList.commentCount?'16px':'12px'}};">{{reacordList.commentCount||"评论"}}</text>
+        </view>
+        <view class="likeCount">
+            <text bindtap="changeLike" class="iconfont icon-aixin-copy" style="color:{{reacordList.ifMyLike?'#eb3349':'#ccc'}};font-size:22px;margin-right:6px;"></text>
+            <text>{{reacordList.likeCount}}</text>
         </view>
     </view>
 </view>

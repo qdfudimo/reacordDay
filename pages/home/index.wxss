@@ -106,7 +106,7 @@ page {
 .viewIcon {
     position: fixed;
     z-index: 6;
-    bottom: 80px;
+    bottom: 100px;
     right: 30px;
     width: 34px;
     height: 34px;

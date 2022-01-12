@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "日程",
+    "navigationBarTitleText": "空间",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

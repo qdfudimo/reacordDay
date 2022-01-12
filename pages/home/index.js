@@ -19,105 +19,16 @@ Page({
     inputValue: "",
     showClose: false,
     scheduleLsits: [{
-      scheduleImg: "",
-      scheduleTime: "2/14日",
-      scheduleTheme: "新年安排",
+      scheduleImg: [ "https://sg.gxcqapp.cn//uploads/20211115/FrCyL8P9uC-aIVKLlKAWLlgkCaoX.jpg"],
+      // scheduleImg: ["https://sg.gxcqapp.cn//uploads/20211115/FtkZ0hcG3IZ6Fux7HyKEdxvzOsvJ.jpg", "https://sg.gxcqapp.cn//uploads/20211115/FvNHV-2F2vQyg1ns38VrX3sRq2Sb.jpg", "https://sg.gxcqapp.cn//uploads/20211115/FrCyL8P9uC-aIVKLlKAWLlgkCaoX.jpg"],
+      scheduleTime: "2022-01-12 03:30",
       likeCount: 1,
       ifMyLike: 1,
-      scheduleLists: [{
-          id: 1,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 2,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 3,
-          time: "2021-11-22",
-          data: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货"
-        }
-      ],
+      commentCount: 0,
+      scheduleContent: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货",
       userAvatrImage: "",
       userName: "旺仔果冻",
       userId: "11321313"
-    }, {
-      scheduleImg: "",
-      scheduleTime: "2/14日",
-      scheduleTheme: "新年安排",
-      likeCount: 1,
-      ifMyLike: 1,
-      scheduleLists: [{
-          id: 1,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 2,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 3,
-          time: "2021-11-22",
-          data: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货"
-        }
-      ],
-      userAvatrImage: "",
-      userName: "旺仔果冻",
-      userId: "999999"
-    }, {
-      scheduleImg: "",
-      scheduleTime: "2/14日",
-      scheduleTheme: "新年安排",
-      likeCount: 1,
-      ifMyLike: 1,
-      scheduleLists: [{
-          id: 1,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 2,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 3,
-          time: "2021-11-22",
-          data: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货"
-        }
-      ],
-      userAvatrImage: "",
-      userName: "旺仔果冻",
-      userId: "121316677"
-    }, {
-      scheduleImg: "",
-      scheduleTime: "2/14日",
-      scheduleTheme: "新年安排",
-      likeCount: 1,
-      ifMyLike: 1,
-      scheduleLists: [{
-          id: 1,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 2,
-          time: "",
-          data: "新年开始了啊"
-        },
-        {
-          id: 3,
-          time: "2021-11-22",
-          data: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货"
-        }
-      ],
-      userAvatrImage: "",
-      userName: "旺仔果冻",
-      userId: "0000"
     }],
     triggered: false,
     arr: [1, 2, 3],

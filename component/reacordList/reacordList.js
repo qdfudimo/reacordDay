@@ -45,6 +45,15 @@ Component({
         url: `../songList/songList?listId=${listId}`,
       })
     },
+    preview (e) {
+      let dataset = e.currentTarget.dataset
+      let urls = dataset.urls
+      let index = dataset.index
+      wx.previewImage({
+        urls,
+        current: urls[index],
+      })
+    },
     changeLike(e) {
       this.triggerEvent('changeLike',this.data.onlyIndex)
     }
