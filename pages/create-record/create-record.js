@@ -1,12 +1,21 @@
 // pages/mine/index.js
 //   "navigationStyle": "custom"
+import {
+  chooseFile,
+  isImageFile
+} from "../../utils/upload"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    height: 20,
+    focus: false,
+    maxCount: 9,
+    files: [],
+    maxSize: 10 * 1024 * 1024,
+    address: "请选择位置信息"
   },
 
   /**
@@ -26,7 +35,118 @@ Page({
       }
     })
   },
-
+  chooseImage(event) {
+    const {
+      type
+    } = event.currentTarget.dataset;
+    let files = this.data.files;
+    chooseFile({
+        accept: type,
+        maxCount: this.data.maxCount - files.length,
+      })
+      .then((res) => {
+        this.onAfterRead(res);
+      })
+      .catch((error) => {
+        // wx.showToast({
+        //   title: '图片选择失败',
+        //   icon: 'none'
+        // });
+      });
+  },
+  onAfterRead(file) {
+    const {
+      maxSize
+    } = this.data;
+    const oversize = Array.isArray(file) ?
+      file.some((item) => item.size > maxSize) :
+      file.size > maxSize;
+    if (oversize) {
+      wx.showToast({
+        title: '单个图片大小不能超过10M',
+        icon: 'none'
+      });
+      return;
+    }
+    this.setData({
+      files: this.data.files.concat(Array.isArray(file) ? file : [file]),
+    });
+  },
+  onPreviewImage(event) {
+    const {
+      index
+    } = event.currentTarget.dataset;
+    const {
+      files
+    } = this.data;
+    const item = files[index];
+    wx.previewImage({
+      urls: files.filter((item) => isImageFile(item)).map((item) => item.url),
+      current: item.url,
+      fail() {
+        wx.showToast({
+          title: '预览图片失败',
+          icon: 'none'
+        });
+      },
+    });
+  },
+  deleteItem(event) {
+    const {
+      index
+    } = event.currentTarget.dataset;
+    this.setData({
+      files: this.data.files.filter((item, i) => i !== index),
+    });
+  },
+  choosiePlace() {
+    let that = this;
+    wx.chooseLocation({
+      success(res) {
+        console.log(res);
+        const {
+          address,
+          name,
+          latitude,
+          longitude
+        } = res;
+        // const regex = /^(.*?[市州]|.*?地区|.*?特别行政区)(.*?[市区县])(.*?)$/g;
+        // const address2 =regex.exec(address);
+        that.setData({
+          location: {
+            address,
+            name,
+            latitude,
+            longitude
+          }
+        })
+      },
+      fail(res) {
+        console.log(res);
+      }
+    })
+  },
+  // 获取地址位置信息
+  getLocation() {
+    const that = this;
+    // 获取当前位置的经纬度
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.openLocation({
+          latitude: latitude,
+          longitude: longitude,
+          // 在地图上显示当前位置
+          success(res) {},
+          fail() {
+            console.log(res)
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,69 @@
+.textarea {
+  background-color: rgba(204, 204, 204,.16);  
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.container {
+    padding: 20rpx;
+}
+.uploadContainer {
+    width: 100%;
+    /* background-color: chartreuse; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.uploader__file {
+    position: relative;
+    width: 160rpx;
+    height: 160rpx;
+    /* background-color: coral; */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 22rpx;
+    margin-bottom: 16rpx;
+}
+.uploader__file:nth-child(4n) {
+    margin-right: 0;
+}
+.uploadContainer .addPicture {
+    font-size: 40px;
+    color: #999;
+}
+.uploader__file_add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.uploadNum {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    padding-bottom: 20rpx;
+}
+.uploader_delete {
+    position: absolute;
+    right: -16rpx;
+    top: -16rpx;
+    color: #666;
+}
+.location {
+    padding-top: 40rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.placeIcon {
+    color: #666;
+    font-size: 18px;
+}
+.place {
+    flex: 1;
+    line-height: 18px;
+    padding-left: 16rpx;
+    color: #666;
+    font-size: 14px;
+}
