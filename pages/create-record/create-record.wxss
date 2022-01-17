@@ -1,19 +1,23 @@
 .textarea {
-  background-color: rgba(204, 204, 204,.16);  
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx;
-  box-sizing: border-box;
+    background-color: rgba(204, 204, 204, .16);
+    width: 100%;
+    height: 400rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
 }
+
 .container {
     padding: 20rpx;
 }
+
 .uploadContainer {
     width: 100%;
     /* background-color: chartreuse; */
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20rpx;
 }
+
 .uploader__file {
     position: relative;
     width: 160rpx;
@@ -24,19 +28,23 @@
     margin-right: 22rpx;
     margin-bottom: 16rpx;
 }
+
 .uploader__file:nth-child(4n) {
     margin-right: 0;
 }
+
 .uploadContainer .addPicture {
     font-size: 40px;
     color: #999;
 }
+
 .uploader__file_add {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .uploadNum {
     width: 100%;
     display: flex;
@@ -44,26 +52,58 @@
     color: #666;
     padding-bottom: 20rpx;
 }
+
 .uploader_delete {
     position: absolute;
     right: -16rpx;
     top: -16rpx;
-    color: #666;
+    color: #333;
 }
+
 .location {
-    padding-top: 40rpx;
+    padding: 28rpx 0;
     width: 100%;
     display: flex;
     align-items: center;
+    color: #333;
+    border-top: 2rpx solid #eaeaea;
 }
+
+.activePlace {
+    color: #15ca51;
+}
+
 .placeIcon {
-    color: #666;
     font-size: 18px;
 }
+
 .place {
     flex: 1;
     line-height: 18px;
-    padding-left: 16rpx;
-    color: #666;
+    padding-left: 24rpx;
     font-size: 14px;
+}
+
+.picker {
+    width: 100%;
+    padding: 28rpx 0;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-top: 2rpx solid #eaeaea;
+    /* border-top: 2rpx solid #f4f4f4; */
+    border-bottom: 2rpx solid #eaeaea;
+}
+
+.picker_colmuns {
+    flex: 1;
+    text-align: right;
+    color: #333;
+    font-size: 14px;
+    padding-right: 14rpx;
+}
+
+.report {
+    margin-top: 20rpx;
 }

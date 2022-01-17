@@ -15,7 +15,17 @@ Page({
     maxCount: 9,
     files: [],
     maxSize: 10 * 1024 * 1024,
-    address: "请选择位置信息"
+    address: "请选择位置信息",
+    location: {},
+    place: {
+      address: "江苏省宿迁市沭阳县智慧树幼儿园东北(小街路东)",
+      errMsg: "chooseLocation:ok",
+      latitude: 34.187418,
+      longitude: 118.81498,
+      name: "黄金物流",
+    },
+    array: ['公开', '私密'],
+    canSee: 0,
   },
 
   /**
@@ -126,6 +136,19 @@ Page({
       }
     })
   },
+  choosiePlaces() {
+    let {
+      latitude,
+      longitude
+    } = this.data.place;
+    wx.chooseLocation({
+      latitude,
+      longitude,
+      success(res) {
+        console.log(res);
+      }
+    })
+  },
   // 获取地址位置信息
   getLocation() {
     const that = this;
@@ -145,6 +168,11 @@ Page({
           }
         })
       }
+    })
+  },
+  bindPickerChange(e) {
+    this.setData({
+      canSee: e.detail.value
     })
   },
   /**
