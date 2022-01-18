@@ -1,5 +1,20 @@
-<!--pages/mine/index.wxml-->
-<view>
-    我的
-    <text>pages/mine/index.wxml</text>
+<!-- pages/mine/index.wxml -->
+<!-- <view class="container">
+    <image src='/image/sky.jpg' mode="aspectFill"></image>
+    <view class='main nav' style="height:{{customBar}}px">
+        <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;">
+        <view class="backBtn">
+        </view>
+        <view class="title" style="top:{{statusBar}}px">首页</view>
+    </view>
+    </view>
+</view> -->
+
+<view class='nav' style="height:{{customBar}}px">
+  <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;">
+    <view class="backBtn" bindtap="goBack" >
+      <!-- <text class="iconfont icon-fanhui"></text> -->
+    </view>
+    <view class="title" style="top:{{statusBar}}px">首页</view>
+  </view>
 </view>

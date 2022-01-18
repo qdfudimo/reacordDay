@@ -1,1 +1,63 @@
 /* pages/mine/index.wxss */
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* .main {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+} */
+
+.nav {
+    min-height: 0px;
+    background: rgb(38, 185, 243);
+    color: #fff;
+    z-index: 9999;
+    position: relative;
+  }
+   
+  .con {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+  }
+   
+  .title {
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 340rpx);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    height: 60rpx;
+    font-size: 32rpx;
+    line-height: 60rpx;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+   
+  .backBtn {
+    margin-left: 30rpx;
+    font-size: 36rpx;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    max-width: 100%;
+  }

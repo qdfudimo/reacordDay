@@ -1,7 +1,4 @@
 /* pages/home/index.wxss */
-page {
-    height: 100%;
-}
 
 .main {
     position: relative;

@@ -1,11 +1,14 @@
 // pages/mine/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    statusBar: app.globalData.statusBar,
+    customBar: app.globalData.customBar,
+    custom: app.globalData.custom
   },
 
   /**
@@ -40,7 +43,6 @@ Page({
   onHide: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */
