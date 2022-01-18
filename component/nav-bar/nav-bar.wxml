@@ -1,0 +1,8 @@
+<view class="nav" style="height:{{ customBar }}px">
+	<view class="con" style="height:{{ customBar}}px;padding-top:{{statusBar }}px;">
+		<view class="backBtn" bindtap="goBack">
+			<!-- <text class="iconfont icon-fanhui"></text> -->
+		</view>
+		<view class="title" style="top:{{ statusBar }}px">首页</view>
+	</view>
+</view>

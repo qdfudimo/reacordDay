@@ -1,63 +1,64 @@
 /* pages/mine/index.wxss */
 .container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.background_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-/* .main {
-    position: absolute;
-    z-index: 1;
-    color: #fff;
-} */
+.main {
+  box-sizing: border-box;
+  min-height: 0px;
+  color: #fff;
+  z-index: 9999;
+  position: relative;
+  z-index: 1;
+}
 
-.nav {
-    min-height: 0px;
-    background: rgb(38, 185, 243);
-    color: #fff;
-    z-index: 9999;
-    position: relative;
-  }
-   
-  .con {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    display: flex;
-  }
-   
-  .title {
-    position: absolute;
-    text-align: center;
-    width: calc(100% - 340rpx);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-    height: 60rpx;
-    font-size: 32rpx;
-    line-height: 60rpx;
-    pointer-events: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-   
-  .backBtn {
-    margin-left: 30rpx;
-    font-size: 36rpx;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: center;
-    max-width: 100%;
-  }
+.con {
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  display: flex;
+  background-color: transparent;
+}
+
+.content {
+  width: 100%;
+}
+
+.content_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_avtar {
+  padding-left: 32rpx;
+  /* width: 100%; */
+}
+
+.user_avtar .avtar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.background {
+  box-sizing: border-box;
+  width: 200rpx;
+  padding-left: 40rpx;
+  /* background-color: rgb(153, 153, 153,.4); */
+  background: linear-gradient(60deg, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+  height: 28px;
+  line-height: 28px;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
+  font-size: 14px;
+}

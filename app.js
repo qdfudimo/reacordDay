@@ -24,9 +24,11 @@ App({
     const self = this
     wx.getSystemInfo({
       success: e => {
+        console.log(e);
         self.globalData.statusBar = e.statusBarHeight; //状态栏高度
         let custom = wx.getMenuButtonBoundingClientRect();//菜单按钮
         self.globalData.custom = custom;
+        console.log(custom);
         self.globalData.customBar = custom.bottom + custom.top - e.statusBarHeight;
         //计算得到定义的状态栏高度
       }

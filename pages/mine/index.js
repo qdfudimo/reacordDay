@@ -1,7 +1,6 @@
 // pages/mine/index.js
 const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */

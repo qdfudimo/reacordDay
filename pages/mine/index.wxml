@@ -1,20 +1,16 @@
 <!-- pages/mine/index.wxml -->
-<!-- <view class="container">
-    <image src='/image/sky.jpg' mode="aspectFill"></image>
-    <view class='main nav' style="height:{{customBar}}px">
-        <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;">
-        <view class="backBtn">
+<view class="container">
+  <image class="background_image" src='/image/rainbow.jpg' mode="aspectFill"></image>
+  <view class='main'>
+    <!-- <view class='main' style="height:{{customBar}}px"> -->
+    <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;"></view>
+    <view class="content">
+      <view class="content_top">
+        <view class="user_avtar">
+          <image class="avtar" src="/image/avtar.png" />
         </view>
-        <view class="title" style="top:{{statusBar}}px">首页</view>
+        <view class="background">更换背景</view>
+      </view>
     </view>
-    </view>
-</view> -->
-
-<view class='nav' style="height:{{customBar}}px">
-  <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;">
-    <view class="backBtn" bindtap="goBack" >
-      <!-- <text class="iconfont icon-fanhui"></text> -->
-    </view>
-    <view class="title" style="top:{{statusBar}}px">首页</view>
   </view>
 </view>
