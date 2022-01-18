@@ -7,7 +7,8 @@ Page({
   data: {
     statusBar: app.globalData.statusBar,
     customBar: app.globalData.customBar,
-    custom: app.globalData.custom
+    custom: app.globalData.custom,
+    imgList:['/image/rainbow.jpg',"/image/orange.jpg","/image/rabbit.jpg","/image/sky.jpg"]
   },
 
   /**

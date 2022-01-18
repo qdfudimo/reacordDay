@@ -8,9 +8,31 @@
       <view class="content_top">
         <view class="user_avtar">
           <image class="avtar" src="/image/avtar.png" />
+          <view class="userName">
+            <view style="font-size:12px">旺仔果冻</view>
+            <view>普通用户</view>
+          </view>
         </view>
         <view class="background">更换背景</view>
       </view>
     </view>
+  </view>
+  <view class="selectBackground">
+    <scroll-view scroll-x="true" style="width:100%;height:110px;">
+      <view class='flex-view'>
+        <view class="selectImg">
+          <image class="img_background" style="width:100%;height:100%;" src="/image/rainbow.jpg" />
+        </view>
+        <view class="selectImg addImg">
+          <text class="iconfont icon-tianjiatupian1" style="font-size:40px;margin-top:8px;"></text>
+          <text>添加图片</text>
+          <text>建议尺寸</text>
+          <text>750*800</text>
+        </view>
+        <view class="selectImg" wx:for="{{imgList}}" wx:key="index">
+          <image class="img_background" data-url="{{item}}" style="width:100%;height:100%;" src="{{item||'/image/rainbow.jpg'}}" />
+        </view>
+      </view>
+    </scroll-view>
   </view>
 </view>
