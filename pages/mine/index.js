@@ -8,16 +8,58 @@ Page({
     statusBar: app.globalData.statusBar,
     customBar: app.globalData.customBar,
     custom: app.globalData.custom,
-    imgList:['/image/rainbow.jpg',"/image/orange.jpg","/image/rabbit.jpg","/image/sky.jpg"]
+    imgList: [],
+    showBackground: false,
+    currentBackground: "/image/background/rainbow.jpg",
+    isLogin: true,
+    ifCollect: false,
+    defaultImg: "/image/background/rainbow.jpg"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
+    const fs = wx.getFileSystemManager();
+    const pathName = "/image/background";
+    fs.readdir({
+      dirPath: pathName,
+      // dirPath: `${wx.env.USER_DATA_PATH}/recordDay/image`,
+      success: (res) => {
+        this.setData({
+          imgList: res.files.map(item => `${pathName}/${item}`)
+        })
+      },
+      fail(res) {
+        console.error(res)
+      }
+    })
+  },
+  showIfBackground() {
+    this.setData({
+      showBackground: !this.data.showBackground
+    })
+  },
+  selectImage(e) {
+    this.setData({
+      currentBackground: e.target.dataset.url
+    })
+  },
+  /**自定义背景 */
+  selectBackground() {
 
   },
-
+  /**收藏小程序 */
+  collectApplet() {
+    this.setData({
+      ifCollect: true
+    })
+    setTimeout(()=>{
+      this.setData({
+        ifCollect: false
+      })
+    },3000)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
