@@ -1,22 +1,22 @@
 <!-- pages/mine/index.wxml -->
-<view class="container {{isLogin?'':'noColor'}}">
-    <image wx:if="{{isLogin}}" class="background_image" src="{{currentBackground||defaultImg}}" mode="aspectFill"></image>
+<view class="container {{hasUserInfo?'':'noColor'}}">
+    <image wx:if="{{hasUserInfo}}" class="background_image" src="{{currentBackground||defaultImg}}" mode="aspectFill"></image>
     <view class="main">
-        <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;background-color:{{isLogin?'transparent':'#fff'}}"></view>
+        <view class='con' style="height:{{customBar}}px;padding-top:{{statusBar}}px;background-color:{{hasUserInfo?'transparent':'#fff'}}"></view>
         <view class="content">
-            <view class="content_top" style="background-color:{{isLogin?'transparent':'#fff'}};">
+            <view class="content_top" style="background-color:{{hasUserInfo?'transparent':'#fff'}};">
                 <view class="user_avtar">
-                    <image class="avtar" src="/image/vx.png" />
-                    <view class="userName" wx:if="{{isLogin}}">
-                        <view style="font-size:12px">旺仔果冻</view>
+                    <image class="avtar" src="{{userInfo.avatarUrl||'/image/vx.png'}}" />
+                    <view class="userName" wx:if="{{hasUserInfo}}">
+                        <view style="font-size:12px">{{userInfo.nickName}}</view>
                         <view>普通用户</view>
                     </view>
-                    <view class="getInfo" wx:else>
+                    <view bindtap="getUserProfile" class="getInfo" wx:else>
                         <text class="iconfont icon-shuaxin1" style="color:#28C445;font-size:18px;"></text>
                         <text style="margin-left:10px;">同步获取微信头像与昵称</text>
                     </view>
                 </view>
-                <view wx:if="{{isLogin}}" class="background" bindtap="showIfBackground">更换背景</view>
+                <view wx:if="{{hasUserInfo}}" class="background" bindtap="showIfBackground">更换背景</view>
             </view>
             <view class="details">
                 <view class="diary">
@@ -31,9 +31,10 @@
                     <view class="common">
                         <text class="iconfont icon-fenxiang" style="font-size:22px;"></text>
                         <text style="font-size:12px;margin-top:6px;">分享好友</text>
+                        <button data-id="shareBtn" plain="true" open-type="share" class="shareBtn" style="border:0;padding:0;width:100%;"></button>
                     </view>
                     <view class="common">
-                        <text class="iconfont icon-shezhi" style="font-size:22px;"></text>
+                        <text class="iconfont icon-shezhi" style="font-size:22px;" bindtap="setApplet"></text>
                         <text style="font-size:12px;margin-top:6px;">设置</text>
                     </view>
                 </view>
