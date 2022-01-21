@@ -1,5 +1,9 @@
 // pages/mine/index.js
 const app = getApp();
+import {
+  chooseFile,
+  isImageFile
+} from "../../utils/upload"
 Page({
   /**
    * 页面的初始数据
@@ -13,7 +17,19 @@ Page({
     currentBackground: "/image/background/rainbow.jpg",
     hasUserInfo: false,
     ifCollect: false,
-    defaultImg: "/image/background/rainbow.jpg"
+    defaultImg: "/image/background/rainbow.jpg",
+    scheduleLsits: [{
+      scheduleImg: ["https://sg.gxcqapp.cn//uploads/20211115/FrCyL8P9uC-aIVKLlKAWLlgkCaoX.jpg"],
+      // scheduleImg: ["https://sg.gxcqapp.cn//uploads/20211115/FtkZ0hcG3IZ6Fux7HyKEdxvzOsvJ.jpg", "https://sg.gxcqapp.cn//uploads/20211115/FvNHV-2F2vQyg1ns38VrX3sRq2Sb.jpg", "https://sg.gxcqapp.cn//uploads/20211115/FrCyL8P9uC-aIVKLlKAWLlgkCaoX.jpg"],
+      scheduleTime: "2022-01-12 03:30",
+      likeCount: 1,
+      ifMyLike: 1,
+      commentCount: 0,
+      scheduleContent: "新年开始了啊你在啥都hi打哈代发用于列表的索引分类显示和快速定位。货",
+      userAvatrImage: "",
+      userName: "旺仔果冻",
+      userId: "11321313"
+    }],
   },
 
   /**
@@ -35,10 +51,23 @@ Page({
       }
     })
     wx.getStorage({
+      key: "currentBackground",
+      success: (res) => {
+        this.setData({
+          currentBackground: res.data,
+        })
+      },
+      fail: (error) => {
+        this.setData({
+          currentBackground: "/image/background/rainbow.jpg"
+        })
+      }
+    })
+    wx.getStorage({
       key: "userInfo",
       success: (res) => {
         this.setData({
-          userInfo:JSON.parse(res.data),
+          userInfo: JSON.parse(res.data),
           hasUserInfo: true
         })
       },
@@ -58,10 +87,24 @@ Page({
     this.setData({
       currentBackground: e.target.dataset.url
     })
+    wx.setStorage({
+      key: "currentBackground",
+      data: e.target.dataset.url
+    })
   },
   /**自定义背景 */
   selectBackground() {
-
+    chooseFile({
+        accept: "img",
+        maxCount: 1,
+        multiple: false
+      })
+      .then((res) => {
+        this.setData({
+          currentBackground: res[0].url
+        })
+      })
+      .catch((error) => {});
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -107,6 +150,16 @@ Page({
     //   fail() {}
     // })
 
+  },
+  /**点赞 */
+  changeLike(e) {
+    let ifMyLike = this.data.scheduleLsits[e.detail].ifMyLike;
+    let likeCount = this.data.scheduleLsits[e.detail].likeCount;
+    let Count = !ifMyLike ? likeCount + 1 : ifMyLike == 0 ? 0 : likeCount - 1;
+    this.setData({
+      [`scheduleLsits[${e.detail}].ifMyLike`]: !this.data.scheduleLsits[e.detail].ifMyLike,
+      [`scheduleLsits[${e.detail}].likeCount`]: Count
+    })
   },
   /**
    * 用户点击右上角分享

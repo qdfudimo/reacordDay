@@ -62,7 +62,7 @@ function formatFile(
 export function chooseFile({
     accept,
     maxCount,
-    multiple=true,
+    multiple = true,
     sourceType = ['album', 'camera'],
     sizeType = ['original', 'compressed'],
 }) {

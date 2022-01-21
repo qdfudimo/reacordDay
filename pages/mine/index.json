@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "reacord-list": "/component/reacordList/reacordList"
+  },
   "navigationStyle": "custom"
 }

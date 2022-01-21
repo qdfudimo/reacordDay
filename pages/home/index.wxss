@@ -130,11 +130,22 @@
     /* transform: rotate(360deg) scale(1.2); */
     transition: all .6s;
 }
+
 .rotateView {
-    /* border-bottom-color: #000;
-    border-left-color: #000; */
     border-bottom-color: chartreuse;
     border-left-color: chartreuse;
     transform: rotate(270deg);
     transition: all .6s;
+}
+
+.talkList {
+    background-color: #fff;
+    margin: 0 8px 12px 8px;
+    padding: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* box-sizing: border-box; */
+}
+.talkList:last-child {
+    margin-bottom: 26px;
 }

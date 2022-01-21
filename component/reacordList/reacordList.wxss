@@ -1,16 +1,7 @@
 .schedule_view {
-    background-color: #fff;
-    width: calc(100% - 40px);
-    margin: 0 8px 12px 8px;
-    padding: 12px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-.schedule_view:last-child {
-    margin-bottom: 26px;
 }
 
 .schedule_top {
@@ -22,15 +13,21 @@
 }
 
 .schedule_avatr {
-    margin: 0 10px;
+    margin-right:10px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
 }
 
-.userName {
+.schedule_userName {
+    display: block;
     font-size: 14px;
     color: #000;
+    /* color: transparent;
+    background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+    background-size: cover;
+    background-position: center center;
+    background-clip: text; */
 }
 
 .issue_time {
@@ -52,10 +49,8 @@
 
 .schedule_content {
     flex: 1;
-    padding-left: 8px;
     font-size: 14px;
     color: #111;
-    padding-left: 10px;
 }
 
 /* .schedule_list::before {
@@ -97,7 +92,7 @@
 /* box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(85, 85, 85, 0.10); */
 .pictures {
     margin-top: 14px;
-    padding: 0 20rpx 10rpx;
+    padding: 0 0 10rpx;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;

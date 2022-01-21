@@ -2,7 +2,7 @@
     <view class="schedule_top">
         <image class="schedule_avatr" src="{{reacordList.userAvatrImage||'/image/avtar.png'}}" />
         <view class="issue_time">
-            <text class="userName">{{reacordList.userName}}</text>
+            <view class="schedule_userName">{{reacordList.userName}}</view>
             <text>{{reacordList.scheduleTime}}</text>
         </view>
     </view>
